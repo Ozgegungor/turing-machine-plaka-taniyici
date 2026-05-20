@@ -50,7 +50,7 @@ class TuringMachine:
         step = 1
         
         while self.current_state not in [self.reject_state]:
-            # Bant sınırları dışına taşma kontrolü
+            # Bant sınırları dışına çıkma kontrolü
             if self.head_position < 0 or self.head_position >= len(self.tape):
                 self.current_state = self.reject_state
                 break
@@ -82,7 +82,7 @@ class TuringMachine:
                 
             step += 1
 
-        # Sonuç Değerlendirmesi
+        # Sonuç
         if self.current_state == self.accept_state:
             print("SONUÇ: KABUL")
             return "KABUL"
